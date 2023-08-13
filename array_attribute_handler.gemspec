@@ -10,15 +10,15 @@ Gem::Specification.new do |spec|
 
   spec.summary = "A Ruby on Rails concern to handle string attributes as arrays with various options."
   spec.description = "The `handle_array_attribute` concern provides a flexible way to treat string attributes in a Rails model as arrays. This includes parsing strings based on configurable separators, optional spaces between elements, and optional maximum length validation for each element."
-  spec.homepage = "https://github.com/defaye/handle_array_attribute_gem"
+  spec.homepage = "https://github.com/defaye/array_attribute_handler_gem"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/defaye/handle_array_attribute_gem"
-  spec.metadata["changelog_uri"] = "https://github.com/defaye/handle_array_attribute_gem/blob/main/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/defaye/array_attribute_handler_gem"
+  spec.metadata["changelog_uri"] = "https://github.com/defaye/array_attribute_handler_gem/blob/main/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
