@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     array_attribute_handler (1.0.2)
-      activerecord (>= 6.0, < 7)
-      activesupport (>= 6.0, < 7)
+      activerecord (>= 6.0, < 8)
+      activesupport (>= 6.0, < 8)
 
 GEM
   remote: https://rubygems.org/

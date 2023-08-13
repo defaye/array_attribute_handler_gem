@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Allow gem to be installed in Rails 7 apps
+
 ## [1.0.2] - 2023-08-13
 
 ### Fixed
