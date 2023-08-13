@@ -7,25 +7,29 @@ module ArrayAttributeHandler
   extend ActiveSupport::Concern
 
   class_methods do
+    # Public: Handle array attributes.
+    #
+    # attribute_name - The name of the attribute to handle.
+    # options - The options hash.
+    #           :separator - The separator to use when parsing the attribute.
+    #                        Defaults to "\n".
+    #           :spaced_join - Whether to join the parsed values with a space.
+    #                          Defaults to false.
     def handle_array_attribute(attribute_name, options = {})
-      cattr_accessor :array_attributes
-      self.array_attributes ||= []
-      self.array_attributes << attribute_name
-
       separator = options.fetch(:separator, "\n")
       combinator = separator + (options.fetch(:spaced_join, false) ? " " : "")
 
-      # Override setter method
+      # Public: Setter for the attribute.
       define_method("#{attribute_name}=") do |value|
         super(parse_values(value, separator))
       end
 
-      # Define getter for "_text"
+      # Public: Getter for the text representation of the attribute.
       define_method("#{attribute_name}_text") do
         send(attribute_name).join(combinator)
       end
 
-      # Define setter for "_text"
+      # Public: Setter for the text representation of the attribute.
       define_method("#{attribute_name}_text=") do |value|
         send("#{attribute_name}=", parse_values(value, separator))
       end
@@ -34,8 +38,15 @@ module ArrayAttributeHandler
 
   private
 
+  # Internal: Parse the given value into an array of strings.
+  #
+  # value - The value to parse.
+  # separator - The separator to use when parsing the value.
+  #
+  # Returns an array of strings.
   def parse_values(value, separator)
     array = value.is_a?(String) ? value.split(separator) : value.to_a
+    # Remove any empty strings from the array.
     array.map { |v| v.strip.presence }.compact
   end
 end
