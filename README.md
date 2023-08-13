@@ -1,26 +1,50 @@
 # ArrayAttributeHandler
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/array_attribute_handler`. To experiment with that code, run `bin/console` for an interactive prompt.
+ArrayAttributeHandler is a simple Ruby gem designed to facilitate the management of array attributes in Rails-based applications.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```bash
+bundle add array_attribute_handler
+```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```bash
+gem install array_attribute_handler
+```
+
+For those wanting the cutting-edge version or for specific branches, you can specify the GitHub repo in your Gemfile:
+
+```bash
+gem 'array_attribute_handler', git: 'https://github.com/defaye/array_attribute_handler_gem.git'
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Detailed instructions on how to use the gem will be provided soon. For now, refer to the documentation and examples within the code.
 
 ## Development
+
+Interested in contributing or diving deep into the code? Here's how you can get started:
+
+1. Clone the repository.
+1. Execute `bin/setup` to set up the development environment.
+1. Use `rake spec` to run the test suite and ensure everything works as expected.
+1. `bin/console` provides an interactive console for experimentation.
+
+To install the development version of the gem on your local machine:
+
+```bash
+bundle exec rake install
+```
+
+When it's time to cut a new release:
+
+1. Update the version number in version.rb.
+1. Use bundle exec rake release to handle the rest. This will tag the version, push changes and tags to the repository, and release the gem version on RubyGems.org.
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
@@ -28,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/array_attribute_handler.
+Bug reports and pull requests are welcome on GitHub at https://github.com/defaye/array_attribute_handler_gem.
 
 ## License
 
