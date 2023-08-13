@@ -11,3 +11,11 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'array_attribute_handler.gemspec'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+

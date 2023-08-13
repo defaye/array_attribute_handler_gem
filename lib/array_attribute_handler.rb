@@ -3,6 +3,7 @@
 require_relative "array_attribute_handler/version"
 require "active_support/concern"
 
+# Public: ArrayAttributeHandler is a module for handling array attributes.
 module ArrayAttributeHandler
   extend ActiveSupport::Concern
 
@@ -17,7 +18,6 @@ module ArrayAttributeHandler
     #                          Defaults to false.
     def handle_array_attribute(attribute_name, options = {})
       separator = options.fetch(:separator, "\n")
-      combinator = separator + (options.fetch(:spaced_join, false) ? " " : "")
 
       # Public: Setter for the attribute.
       define_method("#{attribute_name}=") do |value|
@@ -26,7 +26,7 @@ module ArrayAttributeHandler
 
       # Public: Getter for the text representation of the attribute.
       define_method("#{attribute_name}_text") do
-        send(attribute_name).join(combinator)
+        send(attribute_name).join(separator + (options.fetch(:spaced_join, false) ? " " : ""))
       end
 
       # Public: Setter for the text representation of the attribute.
