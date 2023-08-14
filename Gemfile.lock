@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    array_attribute_handler (1.0.2)
+    array_attribute_handler (1.1.0)
       activerecord (>= 6.0, < 8)
       activesupport (>= 6.0, < 8)
 
