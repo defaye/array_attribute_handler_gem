@@ -9,11 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Byebug for development
+- Byebug for development.
 
 ### Fixed
 
-- Allow gem to be installed in Rails 7 apps
+- Allow gem to be installed in Rails 7 apps.
+- Handle various platform newlines by default e.g. `\r`, `\r\n` as well as `\n`.
 
 ## [1.0.2] - 2023-08-13
 

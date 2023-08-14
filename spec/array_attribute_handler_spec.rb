@@ -41,9 +41,33 @@ RSpec.describe ArrayAttributeHandler do
       DummyModel.connection.drop_table(:dummy_models)
     end
 
-    it_behaves_like "acts as ArrayAttributeHandler", -> { DummyModel }, :array_attribute_a
-    it_behaves_like "acts as ArrayAttributeHandler", -> { DummyModel }, :array_attribute_b, { separator: "|" }
-    it_behaves_like "acts as ArrayAttributeHandler", -> { DummyModel }, :array_attribute_c, {
+    describe "#handle_array_attribute" do
+      let(:dummy_model_instance) { DummyModel.new }
+
+      describe "when no separator is specified" do
+        it "parses strings with Windows-style newline characters" do
+          values_string = "Value1\r\nValue2\r\nValue3"
+          dummy_model_instance.send("array_attribute_a=", values_string)
+          expect(dummy_model_instance.array_attribute_a).to eq(%w[Value1 Value2 Value3])
+        end
+
+        it "parses strings with old Mac OS-style newline characters" do
+          values_string = "Value1\rValue2\rValue3"
+          dummy_model_instance.send("array_attribute_a=", values_string)
+          expect(dummy_model_instance.array_attribute_a).to eq(%w[Value1 Value2 Value3])
+        end
+
+        it "parses strings with Unix-style newline characters" do
+          values_string = "Value1\nValue2\nValue3"
+          dummy_model_instance.send("array_attribute_a=", values_string)
+          expect(dummy_model_instance.array_attribute_a).to eq(%w[Value1 Value2 Value3])
+        end
+      end
+    end
+
+    it_behaves_like "ArrayAttributeHandler", -> { DummyModel }, :array_attribute_a
+    it_behaves_like "ArrayAttributeHandler", -> { DummyModel }, :array_attribute_b, { separator: "|" }
+    it_behaves_like "ArrayAttributeHandler", -> { DummyModel }, :array_attribute_c, {
       separator: ",", spaced_join: true
     }
   end
