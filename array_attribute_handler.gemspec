@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_development_dependency "byebug"
   spec.add_development_dependency "sqlite3"
 
   spec.add_dependency "activerecord", ">= 6.0", "< 8"
